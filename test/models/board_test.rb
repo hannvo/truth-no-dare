@@ -5,6 +5,7 @@ class BoardTest < ActiveSupport::TestCase
     @board = boards(:one)
   end
 
+  ### VALIDATION TESTS ###
   test 'valid board' do
     assert @board.valid?
   end
@@ -32,5 +33,14 @@ class BoardTest < ActiveSupport::TestCase
     @board.title = "Very long title much longer than forty characters"
     assert_not @board.valid?, 'Board is valid with a title longer than 40 chars'
     assert_not_nil @board.errors[:title], 'no validation error for title present'
+  end
+
+  ### ASSOCIATION TESTS ###
+  test '#questions' do
+    assert_equal 2, @board.questions.count
+  end
+
+  test '#answers' do
+    assert_equal 2, @board.answers.count
   end
 end
