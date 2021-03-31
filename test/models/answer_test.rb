@@ -10,9 +10,9 @@ class AnswerTest < ActiveSupport::TestCase
   end
 
   test 'invalid answer without text' do
-    @answer.answer = nil
+    @answer.text = nil
     assert_not @answer.valid?, 'Answer is valid without a text'
-    assert_not_nil @answer.errors[:answer], 'no validation error for answer present'
+    assert_not_nil @answer.errors[:text], 'no validation error for text present'
   end
 
   test '#question' do
