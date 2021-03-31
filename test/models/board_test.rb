@@ -41,6 +41,6 @@ class BoardTest < ActiveSupport::TestCase
   end
 
   test '#answers' do
-    assert_equal 2, @board.answers.count
+    assert_equal 3, @board.answers.count
   end
 end
