@@ -1,0 +1,5 @@
+<%= form_for board do |board_form| %>
+  Path: <%= board_form.text_field :path %>
+  Title: <%= board_form.text_field :title %>
+  <%= board_form.submit 'Create Board' %>
+<% end %>
