@@ -14,7 +14,7 @@ class QuestionTest < ActiveSupport::TestCase
     question = Question.new
     question.board = @board
     assert_not question.valid?, 'Question is valid without a text'
-    assert_not_nil question.errors[:question], 'no validation error for question present'
+    assert_not_nil question.errors[:text], 'no validation error for question present'
   end
 
   test '#answers' do
