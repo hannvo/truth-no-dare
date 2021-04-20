@@ -1,6 +1,6 @@
 class BoardsController < ApplicationController
   def show
-    @board = Board.find(params[:id])
+    @board = Board.friendly.find(params[:id])
   end
 
   def new
