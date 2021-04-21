@@ -1,1 +1,5 @@
 <h1><%= @board.title %></h1>
+
+<%= link_to 'New Question', new_board_question_path(@board) %>
+
+<%= @board.questions.last.text unless @board.questions.empty? %>
