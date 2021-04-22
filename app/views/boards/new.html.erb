@@ -1,3 +1,5 @@
 <h1>Truth no dare</h1>
 
-<%= render 'form', board: @board %>
+<%= render 'boards/partials/form', board: @board %>
+
+<%= link_to "hi", board_path(Board.last) %>

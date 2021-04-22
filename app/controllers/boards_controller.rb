@@ -1,6 +1,7 @@
 class BoardsController < ApplicationController
   def show
     @board = Board.friendly.find(params[:id])
+    @open_qs = @board.open_questions(4)
   end
 
   def new

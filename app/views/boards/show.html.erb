@@ -2,4 +2,6 @@
 
 <%= link_to 'New Question', new_board_question_path(@board) %>
 
-<%= @board.questions.last.text unless @board.questions.empty? %>
+<% @open_qs.each do |question| %>
+  <%= render 'boards/partials/question_card', question: question %>
+<% end %>
