@@ -7,3 +7,7 @@ one:
 two:
   path: MyString
   title: MyString
+
+three:
+  path: Somewhere
+  title: Over the Rainbow

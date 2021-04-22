@@ -1,6 +1,2 @@
 <h2>New Question</h2>
-
-<%= form_with model: [ @board, @question ] do |f| %>
-  Question: <%= f.text_area :text %>
-  <%= f.submit 'Create Question' %>
-<% end %>
+<%= render 'shared/text_form', { parent: @board, type: @question } %>

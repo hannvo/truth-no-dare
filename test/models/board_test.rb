@@ -3,6 +3,7 @@ require "test_helper"
 class BoardTest < ActiveSupport::TestCase
   def setup
     @board = boards(:one)
+    @second_board = boards(:three)
   end
 
   ### VALIDATION TESTS ###
@@ -37,10 +38,25 @@ class BoardTest < ActiveSupport::TestCase
 
   ### ASSOCIATION TESTS ###
   test '#questions' do
-    assert_equal 2, @board.questions.count
+    assert_equal 5, @board.questions.count
   end
 
   test '#answers' do
     assert_equal 3, @board.answers.count
+  end
+
+  ### METHOD TESTS ###
+  test '#open_questions returns array' do
+    assert_instance_of Array, @board.open_questions, '#open_questions should return an array'
+  end
+
+  test '#open_questions() returns all unanswered questions' do
+    assert_equal 3, @board.open_questions.count, '#open_questions() returns wrong number of questions'
+    assert_equal 5, @second_board.open_questions.count, '#open_questions() returns wrong number of questions'
+  end
+
+  test '#open_questions(n) returns first n unanswered questions' do
+    assert_equal 3, @board.open_questions(4).count, '#open_questions() returns wrong number of questions'
+    assert_equal 4, @second_board.open_questions(4).count, '#open_questions() returns wrong number of questions'
   end
 end

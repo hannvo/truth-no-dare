@@ -1,0 +1,4 @@
+<div class="card-question">
+  <%= question.text %>
+  <%= link_to 'Answer', new_question_answer_path(question) unless answered %>
+</div>
