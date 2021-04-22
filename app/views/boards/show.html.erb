@@ -3,5 +3,12 @@
 <%= link_to 'New Question', new_board_question_path(@board) %>
 
 <% @open_qs.each do |question| %>
-  <%= render 'boards/partials/question_card', question: question %>
+  <%= render 'boards/partials/question_card', { question: question, answered: false } %>
+<% end %>
+
+<% @answers.each do |answer| %>
+  <div class="qna-wrapper">
+    <%= render 'boards/partials/question_card', { question: answer.question, answered: true } %>
+    <%= render 'boards/partials/answer_card', answer: answer %>
+  </div>
 <% end %>
