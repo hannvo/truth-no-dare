@@ -46,6 +46,8 @@ group :development do
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  # Bullet helps detect n + 1 queries
+  gem 'bullet'
 
   gem "better_errors"
   # necessary to use Better Errors' advanced features (REPL, local/instance variable inspection, pretty stack frame names)
