@@ -8,8 +8,7 @@ class Board < ApplicationRecord
   validates :title, presence: true, length: { maximum: 40 }
   validates :path, presence: true, uniqueness: true
 
-  def open_questions(num = nil)
-    open_qs = questions.select { |question| question.answers.count.zero? }
-    num.nil? ? open_qs : open_qs.first(num)
+  def open_questions(num)
+    questions.left_outer_joins(:answers).where("answers.question_id is null").limit(num)
   end
 end
