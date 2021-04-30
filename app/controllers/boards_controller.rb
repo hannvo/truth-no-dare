@@ -17,6 +17,6 @@ class BoardsController < ApplicationController
   private
 
   def board_params
-    params.require(:board).permit(:title, :path)
+    params.require(:board).permit(:title, :theme)
   end
 end
