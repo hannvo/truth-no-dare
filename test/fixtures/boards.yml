@@ -1,13 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  path: MyStringNew
+  theme: fun
   title: MyString
 
 two:
-  path: MyString
+  theme: fun
   title: MyString
 
 three:
-  path: Somewhere
+  theme: fun
   title: Over the Rainbow

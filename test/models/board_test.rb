@@ -11,17 +11,10 @@ class BoardTest < ActiveSupport::TestCase
     assert @board.valid?
   end
 
-  test 'invalid without path' do
-    @board.path = nil
-    assert_not @board.valid?, 'Board is valid without a path'
-    assert_not_nil @board.errors[:path], 'no validation error for path present'
-  end
-
-  test 'invalid without unique path' do
-    Board.create(path: 'My path', title: 'My Title')
-    board_copy = Board.new(path: 'My path', title: 'Whatever')
-    assert_not board_copy.valid?, 'Board is valid with duplicate path'
-    assert_not_nil board_copy.errors[:path], 'no validation error for path present'
+  test 'invalid without theme' do
+    @board.theme = nil
+    assert_not @board.valid?, 'Board is valid without a theme'
+    assert_not_nil @board.errors[:theme], 'no validation error for theme present'
   end
 
   test 'invalid without title' do
@@ -47,13 +40,13 @@ class BoardTest < ActiveSupport::TestCase
 
   ### METHOD TESTS ###
   test '#open_questions returns array' do
-    assert_instance_of Array, @board.open_questions, '#open_questions should return an array'
+    assert_instance_of Array, @board.open_questions(1), '#open_questions should return an array'
   end
 
-  test '#open_questions() returns all unanswered questions' do
-    assert_equal 3, @board.open_questions.count, '#open_questions() returns wrong number of questions'
-    assert_equal 5, @second_board.open_questions.count, '#open_questions() returns wrong number of questions'
-  end
+  # test '#open_questions() returns all unanswered questions' do
+  #   assert_equal 3, @board.open_questions.count, '#open_questions() returns wrong number of questions'
+  #   assert_equal 5, @second_board.open_questions.count, '#open_questions() returns wrong number of questions'
+  # end
 
   test '#open_questions(n) returns first n unanswered questions' do
     assert_equal 3, @board.open_questions(4).count, '#open_questions() returns wrong number of questions'
