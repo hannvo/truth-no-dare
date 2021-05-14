@@ -1,9 +1,5 @@
 class QuestionsController < ApplicationController
-  before_action :find_board, only: [:new, :create]
-
-  def new
-    @question = Question.new
-  end
+  before_action :find_board, only: [:create]
 
   def create
     @question = Question.new(question_params)

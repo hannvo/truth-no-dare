@@ -1,6 +1,12 @@
 <h2><%= @board.title %></h2>
 
-<%= link_to 'New Question', new_board_question_path(@board) %>
+<div data-controller="new-question">
+  <button data-action="click->new-question#showForm">New Question</button>
+
+  <div data-target="new-question.modal" class="modal hide-modal">
+    <%= render 'boards/partials/new_question' %>
+  </div>
+</div>
 
 <% @open_qs.each do |question| %>
   <%= render 'boards/partials/question_card', { question: question, answered: false } %>

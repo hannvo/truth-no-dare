@@ -1,4 +1,4 @@
-<%= form_with model: [ parent, type ] do |f| %>
+<%= form_with model: [ parent, type ], data: { remote: 'true' } do |f| %>
   Text: <%= f.text_area :text %>
   <%= f.submit %>
 <% end %>
