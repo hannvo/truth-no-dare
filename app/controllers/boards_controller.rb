@@ -3,6 +3,7 @@ class BoardsController < ApplicationController
     @board = Board.friendly.find(params[:id])
     @open_qs = @board.open_questions(4)
     @answers = @board.answers.includes(:question).reverse
+    @question = Question.new
   end
 
   def new
