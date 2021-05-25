@@ -1,0 +1,17 @@
+<div class="masonry">
+  <% answers.each do |answer| %>
+    <% question = answer.question %>
+
+    <div class="answered-card">
+
+      <div class="answered-top" style="background-color: <%= generate_color(theme, question) %> ">
+        <%= render 'boards/partials/question_card', { question: question, answered: true } %>
+      </div>
+
+      <p class="answered-btm" style="background-color: <%= generate_color(theme, answer) %> ">
+        <%= answer.text %>
+      </p>
+    </div>
+
+  <% end %>
+</div>

@@ -12,9 +12,4 @@
   <%= render 'boards/partials/question_card', { question: question, answered: false } %>
 <% end %>
 
-<% @answers.each do |answer| %>
-  <div class="qna-wrapper">
-    <%= render 'boards/partials/question_card', { question: answer.question, answered: true } %>
-    <%= render 'boards/partials/answer_card', answer: answer %>
-  </div>
-<% end %>
+<%= render 'boards/partials/answers', { answers: @answers, theme: @board.theme } %>

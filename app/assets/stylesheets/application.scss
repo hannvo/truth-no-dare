@@ -7,11 +7,14 @@
 
 * {
   box-sizing: border-box;
+  margin: 0;
 }
 
 body {
   font-size: 14px;
   font-family: 'Roboto', 'Helvetica', sans-serif;
+  word-wrap: break-word;
+  padding: 2rem 0;
 }
 
 h1 {

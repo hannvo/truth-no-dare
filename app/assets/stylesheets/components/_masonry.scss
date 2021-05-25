@@ -1,0 +1,26 @@
+.masonry {
+    column-gap: 1em;
+    columns: 166px auto;
+    padding-top: 1rem
+}
+
+.answered-card {
+    display: inline-block;
+    margin: 0.5em 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 8px 16px 0px;
+    border-radius: 8px;
+}
+
+.answered-top {
+    padding: 1.5em 1.5em 1em;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.answered-btm {
+    padding: .75em 1.5em 1.5em;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
