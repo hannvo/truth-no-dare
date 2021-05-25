@@ -1,4 +1,4 @@
-<h2><%= @board.title %></h2>
+<h2 class="<%= "title-#{@board.theme}" %>"><%= @board.title %></h2>
 
 <div data-controller="new-question">
   <button data-action="click->new-question#showForm">New Question</button>
