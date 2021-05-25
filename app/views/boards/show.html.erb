@@ -1,15 +1,17 @@
-<h2 class="<%= "title-#{@board.theme}" %>"><%= @board.title %></h2>
+<div class="container">
+  <h2 class="<%= "title-#{@board.theme}" %>"><%= @board.title %></h2>
 
-<div data-controller="new-question">
-  <button data-action="click->new-question#showForm">New Question</button>
+  <div data-controller="new-question">
+    <button data-action="click->new-question#showForm">New Question</button>
 
-  <div data-target="new-question.modal" class="modal hide-modal">
-    <%= render 'boards/partials/new_question' %>
+    <div data-target="new-question.modal" class="modal hide-modal">
+      <%= render 'boards/partials/new_question' %>
+    </div>
   </div>
+
+  <% @open_qs.each do |question| %>
+    <%= render 'boards/partials/question_card', { question: question, answered: false } %>
+  <% end %>
+
+  <%= render 'boards/partials/answers', { answers: @answers, theme: @board.theme } %>
 </div>
-
-<% @open_qs.each do |question| %>
-  <%= render 'boards/partials/question_card', { question: question, answered: false } %>
-<% end %>
-
-<%= render 'boards/partials/answers', { answers: @answers, theme: @board.theme } %>
