@@ -1,4 +1,4 @@
-<div class="card-question">
+<div class="card-question" style="background-color: <%= generate_color(theme, question) %>">
   <%= question.text %>
   <%= link_to 'Answer', new_question_answer_path(question) unless answered %>
 </div>
