@@ -1,7 +1,7 @@
 class BoardsController < ApplicationController
   def show
     @board = Board.friendly.find(params[:id])
-    @open_qs = @board.open_questions(4)
+    @open_qs = @board.open_questions(3)
     @answers = @board.answers.includes(:question).reverse
     @question = Question.new
   end

@@ -1,0 +1,16 @@
+<div class="questions-wrapper">
+  <% open_qs.each do |question| %>
+    <%= render 'boards/partials/question_card',
+        { question: question, answered: false, theme: theme } %>
+  <% end %>
+
+  <div data-controller="new-question">
+    <button data-action="click->new-question#showForm" class="card-question btn-new-q" tabindex=0>
+      New Question
+    </button>
+
+    <div data-target="new-question.modal" class="modal hide-modal">
+      <%= render 'boards/partials/new_question' %>
+    </div>
+  </div>
+</div>
