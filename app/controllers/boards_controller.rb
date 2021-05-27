@@ -4,6 +4,7 @@ class BoardsController < ApplicationController
     @open_qs = @board.open_questions(3)
     @answers = @board.answers.includes(:question).reverse
     @question = Question.new
+    @answer = Answer.new
   end
 
   def new

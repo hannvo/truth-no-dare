@@ -1,8 +1,5 @@
 class AnswersController < ApplicationController
-  before_action :find_question, only: [:new, :create]
-  def new
-    @answer = Answer.new
-  end
+  before_action :find_question, only: [:create]
 
   def create
     @answer = Answer.new(answer_params)

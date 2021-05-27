@@ -1,0 +1,12 @@
+<button class="btn-back" data-action="click->new-answer#closeModal">back</button>
+
+<div class="modal-card">
+  <h2 class="<%= "title-#{@board.theme}" %>">Your Answer</h2>
+  <p><%= question.text %></p>
+  <%= form_with model: [ @board, @answer ],
+                url: question_answers_path(question),
+                data: { remote: 'true' } do |f| %>
+    Text: <%= f.text_area :text %>
+    <%= f.submit %>
+  <% end %>
+</div>
