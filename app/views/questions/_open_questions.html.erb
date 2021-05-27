@@ -1,14 +1,13 @@
 <div class="questions-wrapper">
   <% open_qs.each do |question| %>
     <div data-controller="new-answer">
-      <%= render 'boards/partials/question_card',
+      <%= render 'questions/question_card',
           { question: question, answered: false, theme: theme } %>
       <div data-new-answer-target="modal" class="modal hide-modal">
-        <%= render 'boards/partials/new_answer', question: question %>
+        <%= render 'answers/form', question: question %>
       </div>
     </div>
   <% end %>
-
 
   <div data-controller="new-question">
     <button data-action="click->new-question#showForm" class="card-question btn-new-q" tabindex=0>
@@ -16,9 +15,8 @@
     </button>
 
     <div data-new-question-target="modal" class="modal hide-modal">
-      <%= render 'boards/partials/new_question' %>
+      <%= render 'questions/new_question' %>
     </div>
-
 
   </div>
 </div>

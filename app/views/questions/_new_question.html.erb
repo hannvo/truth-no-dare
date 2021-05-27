@@ -2,5 +2,5 @@
 
 <div class="modal-card">
   <h2 class="<%= "title-#{@board.theme}" %>">New Question</h2>
-  <%= render 'shared/text_form', { parent: @board, type: @question } %>
+  <%= render 'questions/form', { parent: @board, type: @question } %>
 </div>
