@@ -6,10 +6,12 @@ export default class extends Controller {
 
   showForm(event) {
     this.modalTarget.classList.remove('hide-modal');
+    this.errorsTarget.classList.add('active');
   }
 
   closeModal(event) {
     this.modalTarget.classList.add('hide-modal');
+    this.errorsTarget.classList.remove('active');
     this.errorsTarget.innerHTML = "";
   }
 }

@@ -1,8 +1,10 @@
 <h1 class="container landing-title title-fun">Truth no dare</h1>
+
 <div class="gradient-bg-green">
   <h2 class="tagline container">Create your own board!</h2>
   <%= render 'boards/partials/board_form', board: @board %>
 </div>
+
 <div class="container">
   <p>Try it out and play with this testing board.</p>
   <%= link_to "hi", board_path(Board.last) %>

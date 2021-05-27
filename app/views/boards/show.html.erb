@@ -1,7 +1,7 @@
 <div class="container">
   <h2 class="<%= "title-#{@board.theme}" %>"><%= @board.title %></h2>
 
-  <%= render 'boards/partials/questions', { open_qs: @open_qs, theme: @board.theme } %>
+  <%= render 'questions/open_questions', { open_qs: @open_qs, theme: @board.theme } %>
 
-  <%= render 'boards/partials/answers', { answers: @answers, theme: @board.theme } %>
+  <%= render 'answers/answers', { answers: @answers, theme: @board.theme } %>
 </div>

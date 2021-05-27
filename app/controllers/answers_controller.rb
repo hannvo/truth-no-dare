@@ -1,8 +1,5 @@
 class AnswersController < ApplicationController
-  before_action :find_question, only: [:new, :create]
-  def new
-    @answer = Answer.new
-  end
+  before_action :find_question, only: [:create]
 
   def create
     @answer = Answer.new(answer_params)
@@ -10,7 +7,10 @@ class AnswersController < ApplicationController
     if @answer.save
       redirect_to board_path(@question.board)
     else
-      render :new
+      respond_to do |format|
+        format.js
+        @errors = @answer.errors.full_messages
+      end
     end
   end
 

@@ -1,0 +1,9 @@
+<div class="card-question" style="background-color: <%= generate_color(theme, question) %>">
+  <%= question.text %> <br>
+
+  <% unless answered %>
+    <button data-action="click->new-answer#showForm" data-question-id="<%= question.id %>" class="btn-new-q" tabindex=0>
+      Answer
+    </button>
+  <% end %>
+</div>

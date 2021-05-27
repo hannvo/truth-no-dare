@@ -1,5 +1,6 @@
 <div class="container board-form-wrapper">
   <%= form_for board do |board_form| %>
     <%= board_form.text_field :title, placeholder: 'Choose a title', class: "input-field" %><%= board_form.submit 'Enter!', class: "btn-submit" %>
+    <%= render 'shared/error_messages', errors: @errors if @errors %>
   <% end %>
 </div>

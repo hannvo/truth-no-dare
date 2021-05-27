@@ -1,0 +1,8 @@
+document.querySelector('.error-list.active').innerHTML = "";
+
+<% @errors.each do |error| %>
+  document.querySelector('.error-list.active').insertAdjacentHTML('beforeend',
+    `<li class="error-item">
+      <%= escape_javascript(error) %>
+    </li>`);
+<% end %>

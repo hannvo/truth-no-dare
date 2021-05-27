@@ -4,6 +4,7 @@ class BoardsController < ApplicationController
     @open_qs = @board.open_questions(3)
     @answers = @board.answers.includes(:question).reverse
     @question = Question.new
+    @answer = Answer.new
   end
 
   def new
@@ -12,7 +13,12 @@ class BoardsController < ApplicationController
 
   def create
     @board = Board.new(board_params)
-    @board.save ? (redirect_to board_path(@board)) : (render :new)
+    if @board.save
+      redirect_to board_path(@board)
+    else
+      @errors = @board.errors.full_messages
+      render :new
+    end
   end
 
   private
