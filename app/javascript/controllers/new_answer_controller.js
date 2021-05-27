@@ -5,12 +5,10 @@ export default class extends Controller {
 
 
   showForm(event) {
-    const modal = event.currentTarget.parentNode.parentNode.querySelector('.modal');
-    modal.classList.remove('hide-modal');
+    this.modalTarget.classList.remove('hide-modal');
   }
 
   closeModal(event) {
-    const modal = event.currentTarget.parentNode.parentNode.querySelector('.modal');
-    modal.classList.add('hide-modal');
+    this.modalTarget.classList.add('hide-modal');
   }
 }
