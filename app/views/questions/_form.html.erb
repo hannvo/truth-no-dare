@@ -1,4 +1,5 @@
 <%= form_with model: [ parent, type ], data: { remote: 'true' } do |f| %>
   Text: <%= f.text_area :text %>
+  <ul data-new-question-target="errors" class="error-list-question error-list"></ul>
   <%= f.submit %>
 <% end %>

@@ -1,0 +1,14 @@
+.field_with_errors {
+  border: 1px solid #721;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  display: inline-block;
+}
+
+.error-list {
+  padding: .5em 0 .5em;
+  font-size: .75rem;
+  font-weight: 700;
+  list-style: none;
+  color: #721;
+}

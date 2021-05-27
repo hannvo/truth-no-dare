@@ -1,7 +1,7 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  static targets = [ "modal" ]
+  static targets = [ "modal", "errors" ]
 
 
   showForm(event) {
@@ -10,5 +10,6 @@ export default class extends Controller {
 
   closeModal(event) {
     this.modalTarget.classList.add('hide-modal');
+    this.errorsTarget.innerHTML = "";
   }
 }

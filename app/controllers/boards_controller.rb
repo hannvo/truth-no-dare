@@ -13,7 +13,12 @@ class BoardsController < ApplicationController
 
   def create
     @board = Board.new(board_params)
-    @board.save ? (redirect_to board_path(@board)) : (render :new)
+    if @board.save
+      redirect_to board_path(@board)
+    else
+      @errors = @board.errors.full_messages
+      render :new
+    end
   end
 
   private

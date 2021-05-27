@@ -7,7 +7,10 @@ class QuestionsController < ApplicationController
     if @question.save
       redirect_to board_path(@board)
     else
-      render :new
+      respond_to do |format|
+        format.js
+        @errors = @question.errors.full_messages
+      end
     end
   end
 

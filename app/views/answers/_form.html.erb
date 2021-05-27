@@ -4,12 +4,11 @@
   <h2 class="<%= "title-#{@board.theme}" %>">Your Answer</h2>
   <p><%= question.text %></p>
 
-  <%= render 'shared/error_messages', errors: @errors if @errors %>
-
   <%= form_with model: [ @board, @answer ],
                 url: question_answers_path(question),
                 data: { remote: 'true' } do |f| %>
     Text: <%= f.text_area :text %>
+    <ul data-new-answer-target="errors" class="error-list"></ul>
     <%= f.submit %>
   <% end %>
 </div>
