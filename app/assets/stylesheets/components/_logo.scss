@@ -1,8 +1,13 @@
 #logo {
   display: inline-block;
-  padding: 1em 1em 0;
+  margin: .5em;
+  padding: .5em;
+  font-weight: 700;
+  color: rgba(198,72,18, .7);
+  text-shadow: .15em .15em #fff,
+                0 2px 30px rgba(17, 12, 46, 0.5);
   &:hover,
   &:focus {
-    color: rgba(17, 12, 46, 0.8);
+    text-shadow: .15em .15em #e19812;
   }
 }
