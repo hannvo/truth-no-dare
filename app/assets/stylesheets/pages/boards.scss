@@ -5,34 +5,25 @@
   margin-top: 2rem;
   border-radius: 8px;
   background-color: rgba(17, 12, 46, 0.8);
-  .card-question {
+  .card-question,
+  .btn-new-q {
     padding: 1em;
     border-radius: 8px;
     width: 100%;
-    margin-bottom: .5em;
     display: flex;
+  }
+  .card-question {
+    margin-bottom: .5em;
     justify-content: space-between;
   }
   .btn-new-q {
-    margin-bottom: 0;
+    // margin-bottom: 0;
     background-color: #fff;
-    // display: flex;
     justify-content: center;
+    font-size: 1rem;
     button {
-      font-size: 1rem;
-      padding: 0;
+      font-size: inherit;
     }
-  }
-  button {
-      color: #c64812;
-      border: none;
-      background-color: #fff;
-      font-weight: 700;
-  }
-  button:hover,
-  button:focus {
-    color: #e125B4;
-    cursor: pointer;
   }
   .btn-answer {
     display: block;
@@ -56,6 +47,7 @@
       flex-direction: column;
     }
     .btn-new-q {
+      flex: 0 1 225px;
       align-self: stretch;
     }
     .btn-answer {

@@ -1,0 +1,25 @@
+button {
+  color: #c64812;
+  border: none;
+  background-color: #fff;
+  font-weight: 700;
+  &:hover,
+  &:focus {
+    color: #e125B4;
+    cursor: pointer;
+  }
+}
+.btn-back {
+  float: right;
+  padding: .5em .75em;
+  margin: -1em -1em 0 0;
+  border-radius: 2px;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 8px 8px 0px;
+  color: #fff;
+  background-color: #c64812;
+  &:hover,
+  &:focus {
+    color: #fff;
+    background-color: #e125B4;
+  }
+}
