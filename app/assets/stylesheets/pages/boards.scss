@@ -5,39 +5,53 @@
   margin-top: 2rem;
   border-radius: 8px;
   background-color: rgba(17, 12, 46, 0.8);
-  .card-question {
+  .card-question,
+  .btn-new-q {
     padding: 1em;
     border-radius: 8px;
     width: 100%;
+    display: flex;
+  }
+  .card-question {
     margin-bottom: .5em;
+    justify-content: space-between;
   }
   .btn-new-q {
-    border: none;
-    font-size: 1em;
-    margin-bottom: 0;
+    // margin-bottom: 0;
     background-color: #fff;
-    color: #c64812;
-    text-shadow: .05em .05em #e19812;
-    text-align: center;
+    justify-content: center;
+    font-size: 1rem;
+    button {
+      font-size: inherit;
+    }
   }
-  .btn-new-q:hover,
-  .btn-new-q:focus {
-    color: #e125B4;
+  .btn-answer {
+    display: block;
+    margin-left: 1em;
+    padding: .5em .75em;
+    border-radius: 2px;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 8px 8px 0px;
+    align-self: center;
   }
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 700px) {
   .questions-wrapper {
     flex-direction: row;
     align-items: start;
     justify-content: space-between;
     gap: 1em;
     .card-question {
-      flex: 1 1 0;
+      flex: 0 1 225px;
       margin-bottom: 0;
+      flex-direction: column;
     }
     .btn-new-q {
+      flex: 0 1 225px;
       align-self: stretch;
+    }
+    .btn-answer {
+      margin: 1.5em 0 .5em;
     }
   }
 }

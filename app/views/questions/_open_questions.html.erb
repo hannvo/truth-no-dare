@@ -1,6 +1,6 @@
 <div class="questions-wrapper">
   <% open_qs.each do |question| %>
-    <div data-controller="new-answer">
+    <div data-controller="new-answer" class="card-question" style="background-color: <%= generate_color(theme, question) %>">
       <%= render 'questions/question_card',
           { question: question, answered: false, theme: theme } %>
       <div data-new-answer-target="modal" class="modal hide-modal">
@@ -9,9 +9,9 @@
     </div>
   <% end %>
 
-  <div data-controller="new-question">
-    <button data-action="click->new-question#showForm" class="card-question btn-new-q" tabindex=0>
-      New Question
+  <div data-controller="new-question" class="btn-new-q">
+    <button data-action="click->new-question#showForm" class="p-0" tabindex=0>
+      ask a question
     </button>
 
     <div data-new-question-target="modal" class="modal hide-modal">
