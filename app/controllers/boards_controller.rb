@@ -9,6 +9,7 @@ class BoardsController < ApplicationController
 
   def new
     @board = Board.new
+    @test_board = Board.find_by(title: 'test')
   end
 
   def create
